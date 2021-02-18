@@ -33,7 +33,7 @@ function App() {
     <>
       <Modal showModal={showModal} setShowModal={setShowModal} />
       <Header />
-      <AnimatePresence exitBeforeEnter>
+      <AnimatePresence exitBeforeEnter onExitComplete={() => setShowModal(false)}>
         <Switch location={location} key={location.key}>
           <Route path="/base">
             <Base addBase={addBase} pizza={pizza} />
@@ -60,3 +60,6 @@ export default App;
 // 2. usamos useLocation() e passamos o location pra tag <Switch / >
 // 3. criamos uma animação pra rodar no exit de cada componente/rota
 // 4. já funciona, mas pra evitar animações mal engatilhadas, usamos exitBeforeEnter na tag <AnimatePresence/>
+
+// agora acrescentamos a prop onExitComplete que é um evento q será disparado sempre que um
+// componente filho do AnimatePresence chamar o exit
