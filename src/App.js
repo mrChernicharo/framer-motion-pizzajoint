@@ -51,3 +51,9 @@ function App() {
 }
 
 export default App;
+
+// estamos cercando todas as rotas do app com AnimatePresence, pra fazê-lo:
+// 1. cercamos o <Switch/> com a tag <AnimatePresence/>
+// 2. usamos useLocation() e passamos o location pra tag <Switch / >
+// 3. criamos uma animação pra rodar no exit de cada componente/rota
+// 4. já funciona, mas pra evitar animações mal engatilhadas, usamos exitBeforeEnter na tag <AnimatePresence/>
