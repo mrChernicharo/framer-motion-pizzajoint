@@ -3,8 +3,9 @@ import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 
 const containerVariants = {
-  hidden: { opacity: 0, x: '-100vw' },
+  hidden: { opacity: 0, x: '100vw' },
   visible: { opacity: 1, x: 0, transition: { type: 'spring', delay: 0.5 } },
+  exit: { x: '-100vw', transition: { ease: 'easeInOut' } },
 };
 
 const nextVariants = {
@@ -30,6 +31,7 @@ const Base = ({ addBase, pizza }) => {
       variants={containerVariants}
       initial="hidden"
       animate="visible"
+      exit="exit"
     >
       <h3>Step 1: Choose Your Base</h3>
       <ul>
