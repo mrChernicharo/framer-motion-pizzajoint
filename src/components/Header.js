@@ -18,6 +18,9 @@ const Header = () => {
         <motion.svg
           className="pizza-svg"
           variants={svgVariants}
+          drag
+          dragConstraints={{ top: 0, right: 0, bottom: 50, left: 0 }}
+          dragElastic={0.2}
           initial="hidden"
           animate="visible"
           xmlns="http://www.w3.org/2000/svg"
@@ -51,3 +54,7 @@ export default Header;
 
 // no need to add neither 'initial' nor 'animate' props to child elements remember?
 // these child guys just inherit the animation execution from their parents
+
+// just add drag and make the element draggable. RIDICULOUSLY EASY!
+// dragConstraints={{ top: 0, right: 0, bottom: 50, left: 0 }} <- limita área onde se pode arrastar o elemento
+// dragElastic={0.2} lower numbers to make it harder to drag the element around

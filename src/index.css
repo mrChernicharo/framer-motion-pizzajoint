@@ -86,6 +86,11 @@ header .pizza-svg {
   stroke-width: 4;
   stroke-linejoin: round;
   stroke-linecap: round;
+  cursor: grab;
+}
+
+.pizza-svg:active {
+  cursor: grabbing;
 }
 
 /* lists */
