@@ -6,12 +6,14 @@ import Home from './components/Home';
 import Base from './components/Base';
 import Toppings from './components/Toppings';
 import Order from './components/Order';
+import Modal from './components/Modal';
 
 function App() {
   const location = useLocation(); // <- gets info about the current route
   // cannot be used here, it'supposed to be used by child components
 
   const [pizza, setPizza] = useState({ base: '', toppings: [] });
+  const [showModal, setShowModal] = useState(false);
 
   const addBase = base => {
     setPizza({ ...pizza, base });
@@ -29,6 +31,7 @@ function App() {
 
   return (
     <>
+      <Modal showModal={showModal} setShowModal={setShowModal} />
       <Header />
       <AnimatePresence exitBeforeEnter>
         <Switch location={location} key={location.key}>
@@ -39,7 +42,7 @@ function App() {
             <Toppings addTopping={addTopping} pizza={pizza} />
           </Route>
           <Route path="/order">
-            <Order pizza={pizza} />
+            <Order pizza={pizza} setShowModal={setShowModal} />
           </Route>
           <Route path="/">
             <Home />
