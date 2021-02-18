@@ -33,8 +33,8 @@ const Home = () => {
         <motion.button variants={buttonVariants} whileHover="hover">
           Create Your Pizza
         </motion.button>
-        <Loader />
       </Link>
+      <Loader />
     </motion.div>
   );
 };
