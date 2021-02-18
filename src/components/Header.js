@@ -48,3 +48,6 @@ const Header = () => {
 };
 
 export default Header;
+
+// no need to add neither 'initial' nor 'animate' props to child elements remember?
+// these child guys just inherit the animation execution from their parents
